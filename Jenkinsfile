@@ -37,7 +37,7 @@ def checkoutAndBuildSource(){
       extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'src']], 
     submoduleCfg: [], 
     userRemoteConfigs: [[url: 'https://github.com/payara/Payara.git']]]
-    withCredentials([[$class: 'StringBinding', credentialsId: 'mark-github', variable: 'githubToken']]) {
+    withCredentials([[$class: 'StringBinding', credentialsId: '29c66d4a-6529-42cc-b5a9-c6887be62d49', variable: 'githubToken']]) {
         dir('src') {
             sh """mvn clean package \
             -DskipTests \
