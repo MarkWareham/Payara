@@ -37,7 +37,6 @@ def checkoutAndBuildSource(){
       extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'src']], 
     submoduleCfg: [], 
     userRemoteConfigs: [[url: 'https://github.com/payara/Payara.git']]]
-    withCredentials([[$class: 'StringBinding', credentialsId: 'mark-github', variable: 'githubToken']]) {
         dir('src') {
             sh '''mvn clean package 
             -DskipTests \
@@ -54,5 +53,4 @@ def checkoutAndBuildSource(){
             -Dsonar.login=3853c5117da15393e564a186ff155dcb44ef8c9e
             org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'''
         }
-    }
 }
