@@ -23,7 +23,7 @@ pipeline {
 
 def checkoutAndBuildSource(){
     echo 'JAVA_HOME = ' + JAVA_HOME
-    prNo = (env.BRANCH_NAME=~/^PR-(\d+)$/)[0][1]
+    prNo = env.BRANCH_NAME
     script{
         dir('src'){
             deleteDir()
