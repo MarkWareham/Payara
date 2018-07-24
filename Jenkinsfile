@@ -38,7 +38,7 @@ def checkoutAndBuildSource(){
     submoduleCfg: [], 
     userRemoteConfigs: [[url: 'https://github.com/payara/Payara.git']]]
         dir('src') {
-            sh '''mvn clean package \
+            sh """mvn clean package \
             -DskipTests \
             -Dsonar.organization=payara \
             -Dsonar.host.url=https://sonarcloud.io \
@@ -51,6 +51,6 @@ def checkoutAndBuildSource(){
             -Dsonar.pullrequest.base=master \
             -Dsonar.github.oauth=${githubToken} \
             -Dsonar.login=3853c5117da15393e564a186ff155dcb44ef8c9e \
-            org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'''
+            org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar"""
         }
 }
