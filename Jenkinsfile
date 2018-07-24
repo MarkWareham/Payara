@@ -49,8 +49,8 @@ def checkoutAndBuildSource(){
             -Dsonar.pullrequest.branch=${env.BRANCH_NAME} \
             -Dsonar.pullrequest.key=${prNo} \
             -Dsonar.pullrequest.base=master \
-            -Dsonar.github.oauth=${githubToken} 
-            -Dsonar.login=3853c5117da15393e564a186ff155dcb44ef8c9e
+            -Dsonar.github.oauth=${githubToken} \
+            -Dsonar.login=3853c5117da15393e564a186ff155dcb44ef8c9e \
             org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'''
         }
 }
