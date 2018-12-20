@@ -70,8 +70,6 @@ public class DnsDiscoveryService implements DiscoveryService {
     private static final String DEFAULT_PORT = "4900";
     private static final String A_RECORD = "A"; //The A DNS Record
 
-    private static final Logger LOGGER = Logger.getLogger(DnsDiscoveryService.class.getName());
-
     private final String[] settings;
 
     public DnsDiscoveryService(String[] settings) {
@@ -86,7 +84,7 @@ public class DnsDiscoveryService implements DiscoveryService {
     @Override
     public Iterable<DiscoveryNode> discoverNodes() {
 
-        LOGGER.log(Level.FINER, "Starting Domain Node Discovery");
+        System.out.println("Starting Domain Node Discovery");
         List<DiscoveryNode> nodes = new LinkedList<>();
 
         for (String host : settings) {
@@ -104,26 +102,31 @@ public class DnsDiscoveryService implements DiscoveryService {
                 InetAddress[] addresses = InetAddress.getAllByName(hostname);
                 for (InetAddress address : addresses) {
                     if (!address.isLoopbackAddress()) {
-                        LOGGER.log(Level.FINE, "Adding Node {0}", address);
+                        System.out.println("Adding Node found locally "+ address);
                         nodes.add(new SimpleDiscoveryNode(new Address(address.getHostAddress(), Integer.valueOf(port))));
                     }
                 }
             } catch (UnknownHostException ex) {
-                LOGGER.log(Level.FINEST, ex.getMessage());
+                System.out.println(ex.getMessage());
                 // not a known host, do a DNS lookup
                 try {
                     
                     DirContext urlContext = new InitialDirContext();
                     Attributes attributes = urlContext.getAttributes("dns:/" + hostname, new String[]{"A"});
+                    System.out.println("Here's what was found");
+                    NamingEnumeration allAttributes = attributes.getAll();
+                    while(allAttributes.hasMore()){
+                        System.out.println(" attr = " + allAttributes.next().toString());
+                    }
                     NamingEnumeration record = attributes.get("A").getAll();
                     while (record.hasMore()) {
                         String address = record.next().toString();
-                        LOGGER.log(Level.FINE, "Adding Node {0}", address);
+                        System.out.println("Adding Node "+ address);
                         nodes.add(new SimpleDiscoveryNode(new Address(address, Integer.valueOf(port))));
                         
                     }
                 } catch (NamingException | UnknownHostException ex1) {
-                    LOGGER.log(Level.WARNING, "Unable to find DNS record for {0}", hostname);
+                    System.out.println("Unable to find DNS record for "+ hostname);
                 }
             }
 
