@@ -43,7 +43,7 @@
     <parent>
         <groupId>fish.payara.samples</groupId>
         <artifactId>samples-parent</artifactId>
-        <version>5.194</version>
+        <version>5.194.1-SNAPSHOT</version>
     </parent>
     
     <artifactId>oauth2</artifactId>
