@@ -32,7 +32,7 @@ made subject to such option by the copyright holder. -->
     <parent>
         <groupId>fish.payara.samples</groupId>
         <artifactId>samples-parent</artifactId>
-        <version>5.194</version>
+        <version>5.194.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>realm-identity-stores</artifactId>
@@ -61,7 +61,6 @@ made subject to such option by the copyright holder. -->
             <groupId>org.glassfish.jersey.core</groupId>
             <artifactId>jersey-client</artifactId>
             <scope>test</scope>
-            <version>2.29.payara-p2</version>
         </dependency>
     </dependencies>
 </project>

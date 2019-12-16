@@ -46,20 +46,20 @@
     <parent>
         <groupId>fish.payara.server</groupId>
         <artifactId>payara-parent</artifactId>
-        <version>5.194</version>
+        <version>5.194.1-SNAPSHOT</version>
     </parent>
     <groupId>fish.payara.server.internal.registration</groupId>
     <artifactId>registration</artifactId>
     <packaging>pom</packaging>
-    <name>Registration</name>  
+    <name>Registration</name>
     <description>Registration</description>
     <modules>
         <module>registration-api</module>
         <module>registration-impl</module>
-        <module>glassfish-registration</module>        
-        <module>servicetag-registry</module>        
-        <module>registration-impl-l10n</module>        
+        <module>glassfish-registration</module>
+        <module>servicetag-registry</module>
+        <module>registration-impl-l10n</module>
     </modules>
-    
+
 </project>
 
