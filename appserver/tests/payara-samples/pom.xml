@@ -10,7 +10,7 @@
         <groupId>fish.payara.server</groupId>
         <artifactId>payara-aggregator</artifactId>
         <version>5.194.1</version>
-        <relativePath />
+        <relativePath>../../../</relativePath>
     </parent>
 
     <groupId>fish.payara.samples</groupId>
@@ -59,6 +59,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>fish.payara.api</groupId>
+                <artifactId>payara-bom</artifactId>
+                <type>pom</type>
+                <version>5.194.1</version>
+                <scope>import</scope>
+            </dependency>            
             <!-- Java EE -->
             <dependency>
                 <groupId>jakarta.platform</groupId>
@@ -92,13 +99,6 @@
                 <scope>test</scope>
             </dependency>
 
-            <!-- MicroProfile Dependencies -->
-            <dependency>
-                <groupId>org.eclipse.microprofile</groupId>
-                <artifactId>microprofile</artifactId>
-                <type>pom</type>
-                <scope>provided</scope>
-            </dependency>
             <dependency>
                 <groupId>io.opentracing</groupId>
                 <artifactId>opentracing-api</artifactId>
