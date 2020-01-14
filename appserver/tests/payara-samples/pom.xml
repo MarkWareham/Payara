@@ -9,7 +9,7 @@
     <parent>
         <groupId>fish.payara.server</groupId>
         <artifactId>payara-aggregator</artifactId>
-        <version>5.194.1</version>
+        <version>5.194.2-SNAPSHOT</version>
         <relativePath>../../../</relativePath>
     </parent>
 
@@ -63,7 +63,7 @@
                 <groupId>fish.payara.api</groupId>
                 <artifactId>payara-bom</artifactId>
                 <type>pom</type>
-                <version>5.194.1</version>
+                <version>5.194.2-SNAPSHOT</version>
                 <scope>import</scope>
             </dependency>            
             <!-- Java EE -->

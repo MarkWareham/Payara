@@ -55,7 +55,7 @@
     <parent>
         <groupId>fish.payara.samples</groupId>
         <artifactId>payara-samples-aggregator</artifactId>
-        <version>5.194.1</version>
+        <version>5.194.2-SNAPSHOT</version>
         <relativePath>../../</relativePath>
     </parent>
 
