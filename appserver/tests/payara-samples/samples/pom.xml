@@ -92,8 +92,8 @@
                 <dependency>
                     <groupId>fish.payara.arquillian</groupId>
                     <artifactId>arquillian-payara-server-managed</artifactId>
+                    <version>${arquillian.payara.managed.version}</version>
                     <scope>test</scope>
-                    <optional>true</optional>
                 </dependency>
             </dependencies>
 
@@ -129,6 +129,7 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
                             <environmentVariables>
+                                <AS_JAVA>${env.JAVA_HOME}</AS_JAVA>
                                 <GLASSFISH_HOME>${session.executionRootDirectory}/target/${payara.directory.name}</GLASSFISH_HOME>
                             </environmentVariables>
                             <!-- This needs tuning -->
@@ -161,7 +162,6 @@
                     <artifactId>arquillian-payara-micro-managed</artifactId>
                     <version>${arquillian.payara.micro.version}</version>
                     <scope>test</scope>
-                    <optional>true</optional>
                 </dependency>
             </dependencies>
 
@@ -223,7 +223,6 @@
                     <artifactId>arquillian-payara-server-remote</artifactId>
                     <version>${arquillian.payara.remote.version}</version>
                     <scope>test</scope>
-                    <optional>true</optional>
                 </dependency>
             </dependencies>
             <build>
