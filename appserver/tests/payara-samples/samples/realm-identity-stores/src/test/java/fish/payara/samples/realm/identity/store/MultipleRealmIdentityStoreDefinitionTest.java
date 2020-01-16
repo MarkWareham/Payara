@@ -39,6 +39,7 @@
  */
 package fish.payara.samples.realm.identity.store;
 
+import fish.payara.samples.PayaraArquillianTestRunner;
 import fish.payara.samples.ServerOperations;
 import fish.payara.samples.realm.identity.store.common.AuthoritiesConstants;
 import static fish.payara.samples.realm.identity.store.common.AuthoritiesConstants.ADMIN;
@@ -54,7 +55,6 @@ import javax.ws.rs.core.Response;
 import static javax.ws.rs.core.Response.Status.CREATED;
 import static javax.ws.rs.core.Response.Status.UNAUTHORIZED;
 import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
 import org.jboss.shrinkwrap.api.ArchivePaths;
 import static org.jboss.shrinkwrap.api.ShrinkWrap.create;
@@ -71,7 +71,7 @@ import static org.valid4j.matchers.http.HttpResponseMatchers.hasStatus;
 /**
  * @author Gaurav Gupta
  */
-@RunWith(Arquillian.class)
+@RunWith(PayaraArquillianTestRunner.class)
 public class MultipleRealmIdentityStoreDefinitionTest {
 
     @ArquillianResource

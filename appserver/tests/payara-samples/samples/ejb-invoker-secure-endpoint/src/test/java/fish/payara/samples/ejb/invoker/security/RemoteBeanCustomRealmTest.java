@@ -40,8 +40,8 @@
 package fish.payara.samples.ejb.invoker.security;
 
 import fish.payara.samples.CliCommands;
+import fish.payara.samples.PayaraArquillianTestRunner;
 
-import org.jboss.arquillian.junit.Arquillian;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -54,7 +54,7 @@ import static java.util.Arrays.asList;
  * custom realm.
  *
  */
-@RunWith(Arquillian.class)
+@RunWith(PayaraArquillianTestRunner.class)
 public class RemoteBeanCustomRealmTest extends AbstractRemoteBeanSecurityTest {
 
     private static final String USERNAME = "myuser_customrealm";
