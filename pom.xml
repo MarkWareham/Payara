@@ -69,6 +69,10 @@
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+	<snapshotRepository>
+            <id>nexus</id>
+            <url>https://newnexus.payara.fish/repository/Payara-ci/</url>
+        </snapshotRepository>
     </distributionManagement>
     <issueManagement>
         <system>Github</system>
@@ -350,7 +354,7 @@
                 </configuration>
             </plugin>
         </plugins>
-
+	
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -407,6 +411,26 @@
                         <skip>${deploy.skip}</skip>
                     </configuration>
                 </plugin>
+
+				<plugin>
+					<groupId>org.sonatype.plugins</groupId>
+					<artifactId>nexus-staging-maven-plugin</artifactId>
+					<version>1.5.1</version>
+					<executions>
+						<execution>
+							<id>default-deploy</id>
+							<phase>deploy</phase>
+							<goals>
+								<goal>deploy</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<serverId>nexus</serverId>
+						<nexusUrl>https://newnexus.payara.fish/repository/Payara-ci/</nexusUrl>
+						<skipStaging>true</skipStaging>
+					</configuration>
+				</plugin>
 
                 <plugin>
                     <groupId>org.apache.felix</groupId>
