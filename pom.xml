@@ -69,10 +69,10 @@
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
-	<snapshotRepository>
+	<repository>
             <id>nexus</id>
             <url>https://newnexus.payara.fish/repository/Payara-ci/</url>
-        </snapshotRepository>
+        </repository>
     </distributionManagement>
     <issueManagement>
         <system>Github</system>
