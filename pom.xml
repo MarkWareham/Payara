@@ -342,15 +342,6 @@
 
     <build>
         <defaultGoal>install</defaultGoal>
-        <plugins>
-            <plugin>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-        </plugins>
-	
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -398,13 +389,13 @@
                         </testExcludes>
                     </configuration>
                 </plugin>
+                
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>${maven.deploy.plugin.version}</version>
+                    <version>${maven-deploy-plugin.version}</version>
                     <configuration>
-                        <retryFailedDeploymentCount>10</retryFailedDeploymentCount>
-                        <skip>${deploy.skip}</skip>
+                        <skip>true</skip>
                     </configuration>
                 </plugin>
 
