@@ -1167,7 +1167,7 @@ Parent is ${project.parent}</echo>
         <profile>
             <id>DeploySnapshot-Internal</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
 
             <distributionManagement>
