@@ -1173,7 +1173,7 @@ Parent is ${project.parent}</echo>
             <distributionManagement>
                 <snapshotRepository>
                     <id>payara-nexus</id>
-                    <url>https://nexus.payara.fish/content/repositories/payara-snapshots</url>
+                    <url>https://newnexus.payara.fish/repository/Payara-ci/</url>
                 </snapshotRepository>
             </distributionManagement>
 
