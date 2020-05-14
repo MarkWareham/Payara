@@ -1185,7 +1185,7 @@ Parent is ${project.parent}</echo>
                         <version>1.6.8</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>payara-nexus</serverId>
+                            <serverId>JenkinsNexusUser</serverId>
                             <nexusUrl>https://nexus.payara.fish/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
