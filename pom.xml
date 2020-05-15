@@ -339,7 +339,7 @@
         </profile>
 
     </profiles>
-
+    
     <build>
         <defaultGoal>install</defaultGoal>
         <pluginManagement>
@@ -413,7 +413,7 @@
 						</execution>
 					</executions>
 					<configuration>
-						<serverId>nexus</serverId>
+						<serverId>payara-nexus</serverId>
 						<nexusUrl>https://newnexus.payara.fish/repository/Payara-ci/</nexusUrl>
 						<skipStaging>true</skipStaging>
 					</configuration>
