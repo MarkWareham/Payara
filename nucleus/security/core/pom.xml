@@ -172,6 +172,24 @@
          </plugin>
         </plugins>
     </build>
+    
+    <profiles>
+        <profile>
+            <!-- This artifact is required by samples tests, so need to deploy in CI -->
+            <id>ci</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <configuration>
+                            <skip>false</skip>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    
     <dependencies>
         <dependency>
             <groupId>org.glassfish.hk2</groupId>
